@@ -4,6 +4,7 @@ import dagger.Component
 import mobi.asta.task2.data.di.ApplicationModule
 import mobi.asta.task2.data.di.RepositoryModule
 import mobi.asta.task2.data.di.RetrofitApiModule
+import mobi.asta.task2.presentation.repodetails.di.RepoDetailsComponent
 import mobi.asta.task2.presentation.repolist.di.RepoListComponent
 import javax.inject.Singleton
 
@@ -16,4 +17,6 @@ import javax.inject.Singleton
 interface ApplicationComponent {
 
     fun plusRepoList(): RepoListComponent.Builder
+
+    fun plusRepoDetails(): RepoDetailsComponent.Builder
 }
