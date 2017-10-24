@@ -1,7 +1,9 @@
 package mobi.asta.task2
 
 import android.app.Application
+import android.databinding.DataBindingUtil
 import mobi.asta.task2.data.di.ApplicationModule
+import mobi.asta.task2.data.di.BindingComponent
 import mobi.asta.task2.data.di.RetrofitApiModule
 
 
@@ -18,14 +20,13 @@ open class Task2Application : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        DataBindingUtil.setDefaultComponent(BindingComponent())
     }
 
-    //region Dependency injection
     val component: ApplicationComponent by lazy {
         DaggerApplicationComponent.builder()
                 .retrofitApiModule(RetrofitApiModule(API_ENDPOINT))
                 .applicationModule(ApplicationModule(this))
                 .build()
     }
-    //endregion
 }

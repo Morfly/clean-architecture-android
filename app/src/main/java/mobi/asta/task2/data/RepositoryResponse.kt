@@ -2,6 +2,7 @@ package mobi.asta.task2.data
 
 import com.google.gson.annotations.SerializedName
 import mobi.asta.task2.domain.Repository
+import java.util.*
 
 
 data class RepositoryResponse(val id: Int,
@@ -14,7 +15,10 @@ data class RepositoryResponse(val id: Int,
                               @SerializedName("stargazers_count")
                               val stargazersCount: Int = 0,
                               @SerializedName("open_issues_count")
-                              val openIssuesCount: Int = 0) {
+                              val openIssuesCount: Int = 0,
+                              val language: String?,
+                              @SerializedName("updated_at")
+                              val updatedAt: Date) {
 }
 
 
@@ -25,5 +29,7 @@ fun RepositoryResponse.toDomain() = Repository(
         numberOfForks = forksCount,
         numberOfIssues = openIssuesCount,
         numberOfStars = stargazersCount,
-        numberOfWatchers = watchersCount
+        numberOfWatchers = watchersCount,
+        language = language,
+        updateDate = updatedAt
 )

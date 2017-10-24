@@ -1,5 +1,7 @@
 package mobi.asta.task2.domain
 
+import java.util.*
+
 
 data class Repository(val id: Int,
                       val title: String,
@@ -7,4 +9,6 @@ data class Repository(val id: Int,
                       val numberOfStars: Int,
                       val numberOfForks: Int,
                       val numberOfWatchers: Int,
-                      val numberOfIssues: Int)
+                      val numberOfIssues: Int,
+                      val language: String?,
+                      val updateDate: Date)
