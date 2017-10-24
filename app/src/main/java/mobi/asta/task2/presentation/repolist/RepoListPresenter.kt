@@ -1,13 +1,28 @@
 package mobi.asta.task2.presentation.repolist
 
+import android.os.Bundle
 import com.morfly.cleanarchitecture.core.di.scope.PerFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import mobi.asta.task2.domain.getjakewhartonrepos.GetJakeWhartonReposInteractor
 import javax.inject.Inject
 
 @PerFragment
 class RepoListPresenter
 @Inject
-constructor() : RepoListContract.Presenter() {
+constructor(private val getJakeWhartonRepos: GetJakeWhartonReposInteractor) : RepoListContract.Presenter() {
 
+    override fun onViewAttached(savedInstanceState: Bundle?) {
+        getRepositories()
+    }
 
+    override fun getRepositories() {
+        subscribe(
+                getJakeWhartonRepos.execute()
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({ view?.showMessage("success") }, this::onError)
+        )
+    }
 
 }

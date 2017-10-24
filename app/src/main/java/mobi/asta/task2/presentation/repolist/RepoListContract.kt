@@ -6,11 +6,12 @@ import com.morfly.cleanarchitecture.core.presentationlayer.BaseView
 
 interface RepoListContract {
 
-    interface View: BaseView {
+    interface View : BaseView {
 
     }
 
-    abstract class Presenter: BasePresenter<View, RepoListViewModel>() {
+    abstract class Presenter : BasePresenter<View, RepoListViewModel>() {
 
+        abstract fun getRepositories()
     }
 }

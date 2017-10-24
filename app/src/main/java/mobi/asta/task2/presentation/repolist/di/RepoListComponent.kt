@@ -5,7 +5,7 @@ import dagger.Subcomponent
 import mobi.asta.task2.presentation.repolist.RepoListFragment
 
 @PerFragment
-@Subcomponent(modules = arrayOf(RepoListMobule::class))
+@Subcomponent(modules = arrayOf(RepoListModule::class))
 interface RepoListComponent {
 
     @Subcomponent.Builder
