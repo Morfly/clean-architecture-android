@@ -13,6 +13,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    dataBinding {
+        enabled true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -39,6 +42,10 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
     // data binding
     kapt 'com.android.databinding:compiler:2.3.3'
+    // dependency injection
+    kapt 'com.google.dagger:dagger-compiler:2.10'
+    compile 'com.google.dagger:dagger:2.10'
+    provided 'javax.annotation:jsr250-api:1.0'
     // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
