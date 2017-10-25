@@ -1,9 +1,11 @@
 package mobi.asta.task2.presentation.repolist
 
+import android.annotation.SuppressLint
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import com.morfly.cleanarchitecture.core.presentationlayer.ViewModel
 import mobi.asta.task2.domain.Repository
+import java.text.SimpleDateFormat
 
 
 data class RepoListItemViewModel(val repository: Repository) : BaseObservable(), ViewModel {
@@ -30,5 +32,8 @@ data class RepoListItemViewModel(val repository: Repository) : BaseObservable(),
 
     @get:Bindable
     val updateDate: String
-        get() = repository.updateDate.toString()
+        @SuppressLint("SimpleDateFormat")
+        get() = SimpleDateFormat("yyyy-MM-dd")
+                .format(repository.updateDate)
+
 }

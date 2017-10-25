@@ -21,11 +21,13 @@
             android:id="@+id/repo_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:text="@{viewModel.title}"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/repo_update_date"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Repository name" />
 
@@ -77,7 +79,6 @@
             android:id="@+id/repo_stars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
             android:text="@{viewModel.numberOfStars}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txt_lang"
@@ -103,6 +104,18 @@
             app:layout_constraintRight_toLeftOf="@+id/repo_forks"
             app:layout_constraintTop_toTopOf="@+id/repo_forks"
             app:srcCompat="@drawable/ic_fork_black" />
+
+        <TextView
+            android:id="@+id/repo_update_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:text="@{viewModel.updateDate}"
+            android:textSize="13sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repo_title"
+            tools:text="2016-05-01" />
 
     </android.support.constraint.ConstraintLayout>
 
