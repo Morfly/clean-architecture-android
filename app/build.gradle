@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
     }
     dataBinding {
         enabled true
@@ -36,6 +37,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     // support
     compile "com.android.support:design:$support_version"
+    compile "com.android.support:cardview-v7:$support_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     // rxjava
     compile 'io.reactivex.rxjava2:rxjava:2.1.5'

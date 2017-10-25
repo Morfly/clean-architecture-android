@@ -11,77 +11,148 @@
             type="mobi.asta.task2.presentation.repodetails.RepoDetailsViewModel" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:background="#E8E8EE"
+        android:clickable="true">
 
-        <TextView
-            android:id="@+id/repo_title"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.title}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="title" />
+            android:layout_margin="16dp">
 
-        <TextView
-            android:id="@+id/repo_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.description}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repo_title"
-            tools:text="description" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/repo_num_of_stars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.numberOfStars}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repo_description"
-            tools:text="0" />
 
-        <TextView
-            android:id="@+id/repo_num_of_forks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.numberOfForks}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repo_num_of_watchers"
-            tools:text="0" />
+                <TextView
+                    android:id="@+id/repo_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.title}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="title" />
 
-        <TextView
-            android:id="@+id/repo_num_of_watchers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.numberOfWatchers}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repo_num_of_stars"
-            tools:text="0" />
+                <TextView
+                    android:id="@+id/repo_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.description}"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/repo_title"
+                    tools:text="description" />
 
-        <TextView
-            android:id="@+id/repo_num_of_issues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@{viewModel.numberOfIssues}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repo_num_of_forks"
-            tools:text="0" />
+                <TextView
+                    android:id="@+id/repo_num_of_stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.numberOfStars}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_stars"
+                    app:layout_constraintLeft_toRightOf="@+id/img_stars"
+                    app:layout_constraintTop_toTopOf="@+id/img_stars"
+                    tools:text="0" />
 
-    </android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/repo_num_of_forks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.numberOfForks}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_forks"
+                    app:layout_constraintLeft_toRightOf="@+id/img_forks"
+                    app:layout_constraintTop_toTopOf="@+id/img_forks"
+                    tools:text="0" />
 
+                <TextView
+                    android:id="@+id/repo_num_of_watchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.numberOfWatchers}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_watchers"
+                    app:layout_constraintLeft_toRightOf="@+id/img_watchers"
+                    app:layout_constraintTop_toTopOf="@+id/img_watchers"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/repo_num_of_issues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.numberOfIssues}"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_issues"
+                    app:layout_constraintLeft_toRightOf="@+id/img_issues"
+                    app:layout_constraintTop_toTopOf="@+id/img_issues"
+                    tools:text="0" />
+
+                <ImageView
+                    android:id="@+id/img_stars"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/repo_description"
+                    app:srcCompat="@drawable/ic_star_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/img_watchers"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_stars"
+                    app:layout_constraintLeft_toRightOf="@+id/repo_num_of_stars"
+                    app:layout_constraintTop_toTopOf="@+id/img_stars"
+                    app:srcCompat="@drawable/ic_eye_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/img_forks"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_watchers"
+                    app:layout_constraintLeft_toRightOf="@+id/repo_num_of_watchers"
+                    app:layout_constraintTop_toTopOf="@+id/img_watchers"
+                    app:srcCompat="@drawable/ic_fork_black" />
+
+                <ImageView
+                    android:id="@+id/img_issues"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_forks"
+                    app:layout_constraintLeft_toRightOf="@+id/repo_num_of_forks"
+                    app:layout_constraintTop_toTopOf="@+id/img_forks"
+                    app:srcCompat="@drawable/ic_warning_black_24dp" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
 </layout>
