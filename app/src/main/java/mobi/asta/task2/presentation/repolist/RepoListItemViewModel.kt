@@ -6,7 +6,7 @@ import com.morfly.cleanarchitecture.core.presentationlayer.ViewModel
 import mobi.asta.task2.domain.Repository
 
 
-class RepoListItemViewModel(val repository: Repository) : BaseObservable(), ViewModel {
+data class RepoListItemViewModel(val repository: Repository) : BaseObservable(), ViewModel {
 
     @get:Bindable
     val title: String

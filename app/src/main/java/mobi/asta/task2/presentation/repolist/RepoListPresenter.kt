@@ -1,10 +1,12 @@
 package mobi.asta.task2.presentation.repolist
 
+import android.databinding.ObservableArrayList
 import android.os.Bundle
 import com.morfly.cleanarchitecture.core.di.scope.PerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import mobi.asta.task2.domain.getjakewhartonrepos.GetJakeWhartonReposInteractor
+import mobi.asta.task2.presentation.repolist.adapter.RepoListItem
 import mobi.asta.task2.presentation.repolist.adapter.toPresentation
 import javax.inject.Inject
 
@@ -26,8 +28,13 @@ constructor(private val getJakeWhartonRepos: GetJakeWhartonReposInteractor) : Re
                 getJakeWhartonRepos.execute()
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({ viewModel.repos.addAll(it.toPresentation()) }, this::onError)
+                        .subscribe({ onReposLoaded(it.toPresentation()) }, this::onError)
         )
+    }
+
+    private fun onReposLoaded(repos: List<RepoListItem>) {
+        viewModel.repos.clear()
+        viewModel.repos.addAll(repos)
     }
 
 }

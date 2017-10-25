@@ -2,6 +2,7 @@ package mobi.asta.task2
 
 import android.app.Application
 import android.databinding.DataBindingUtil
+import io.realm.Realm
 import mobi.asta.task2.data.di.ApplicationModule
 import mobi.asta.task2.data.di.BindingComponent
 import mobi.asta.task2.data.di.RetrofitApiModule
@@ -21,6 +22,7 @@ open class Task2Application : Application() {
         super.onCreate()
         instance = this
         DataBindingUtil.setDefaultComponent(BindingComponent())
+        Realm.init(this)
     }
 
     val component: ApplicationComponent by lazy {

@@ -7,7 +7,7 @@ import com.morfly.cleanarchitecture.core.presentationlayer.ViewModel
 import mobi.asta.task2.presentation.repolist.adapter.RepoListItem
 
 
-class RepoListViewModel : BaseObservable(), ViewModel {
+class RepoListViewModel(val repos: ObservableList<RepoListItem> = ObservableArrayList<RepoListItem>())
+    : BaseObservable(), ViewModel {
 
-    val repos: ObservableList<RepoListItem> = ObservableArrayList()
 }

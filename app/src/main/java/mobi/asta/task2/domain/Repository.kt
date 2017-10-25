@@ -13,7 +13,7 @@ data class Repository(val id: Int,
                       val numberOfWatchers: Int,
                       val numberOfIssues: Int,
                       val language: String?,
-                      val updateDate: Date): Parcelable {
+                      val updateDate: Date?) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
@@ -36,7 +36,7 @@ data class Repository(val id: Int,
         parcel.writeInt(numberOfWatchers)
         parcel.writeInt(numberOfIssues)
         parcel.writeString(language)
-        parcel.writeLong(updateDate.time)
+        parcel.writeLong(updateDate?.time ?: 0)
     }
 
     override fun describeContents(): Int = 0

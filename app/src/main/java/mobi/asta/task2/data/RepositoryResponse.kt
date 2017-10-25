@@ -33,3 +33,5 @@ fun RepositoryResponse.toDomain() = Repository(
         language = language,
         updateDate = updatedAt
 )
+
+//fun List<RepositoryResponse>.toDomain() = this.map { it.toDomain() }

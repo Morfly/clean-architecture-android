@@ -2,6 +2,7 @@ package mobi.asta.task2
 
 import dagger.Component
 import mobi.asta.task2.data.di.ApplicationModule
+import mobi.asta.task2.data.di.RealmModule
 import mobi.asta.task2.data.di.RepositoryModule
 import mobi.asta.task2.data.di.RetrofitApiModule
 import mobi.asta.task2.presentation.repodetails.di.RepoDetailsComponent
@@ -12,7 +13,8 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         ApplicationModule::class,
         RetrofitApiModule::class,
-        RepositoryModule::class
+        RepositoryModule::class,
+        RealmModule::class
 ))
 interface ApplicationComponent {
 

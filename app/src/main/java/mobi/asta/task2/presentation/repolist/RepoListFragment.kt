@@ -2,6 +2,7 @@ package mobi.asta.task2.presentation.repolist
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.SimpleItemAnimator
 import com.morfly.cleanarchitecture.core.presentationlayer.BaseFragment
 import com.morfly.cleanarchitecture.core.presentationlayer.adapter.BindingAdapter
 import mobi.asta.task2.BR
@@ -33,7 +34,7 @@ class RepoListFragment : BaseFragment<RepoListContract.Presenter, FragmentReposi
         adapter.setOnItemClickListener {
             activity.supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, RepoDetailsFragment.newInstance(it.viewModel.repository))
+                    .add(R.id.container, RepoDetailsFragment.newInstance(it.viewModel.repository))
                     .addToBackStack(RepoDetailsFragment::class.java.name)
                     .commit()
         }
