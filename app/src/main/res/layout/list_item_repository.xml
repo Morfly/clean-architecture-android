@@ -14,20 +14,15 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground">
+        android:background="?attr/selectableItemBackground"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/repo_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="@{viewModel.title}"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -38,14 +33,76 @@
             android:id="@+id/repo_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:lines="1"
             android:text="@{viewModel.description}"
+            android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/repo_title"
             tools:text="Repository description" />
+
+        <TextView
+            android:id="@+id/txt_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/language"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repo_description" />
+
+        <TextView
+            android:id="@+id/repo_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@{viewModel.language}"
+            app:layout_constraintLeft_toRightOf="@+id/txt_lang"
+            app:layout_constraintTop_toTopOf="@+id/txt_lang"
+            tools:text="Kotlin" />
+
+        <ImageView
+            android:id="@+id/img_stars"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/repo_stars"
+            app:layout_constraintRight_toLeftOf="@+id/repo_stars"
+            app:layout_constraintTop_toTopOf="@+id/repo_stars"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/repo_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="@{viewModel.numberOfStars}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_lang"
+            tools:text="25" />
+
+        <TextView
+            android:id="@+id/repo_forks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:text="@{viewModel.numberOfForks}"
+            app:layout_constraintBottom_toBottomOf="@+id/repo_stars"
+            app:layout_constraintRight_toLeftOf="@+id/img_stars"
+            app:layout_constraintTop_toTopOf="@+id/repo_stars"
+            tools:text="50" />
+
+        <ImageView
+            android:id="@+id/img_forks"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/repo_forks"
+            app:layout_constraintRight_toLeftOf="@+id/repo_forks"
+            app:layout_constraintTop_toTopOf="@+id/repo_forks"
+            app:srcCompat="@mipmap/ic_launcher" />
 
     </android.support.constraint.ConstraintLayout>
 

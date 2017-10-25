@@ -1,6 +1,7 @@
 package mobi.asta.task2.presentation.repolist
 
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SimpleItemAnimator
 import com.morfly.cleanarchitecture.core.presentationlayer.BaseFragment
@@ -42,6 +43,9 @@ class RepoListFragment : BaseFragment<RepoListContract.Presenter, FragmentReposi
         val layoutManager = LinearLayoutManager(activity)
         binding.listRepos.layoutManager = layoutManager
         binding.listRepos.adapter = adapter
+
+        val divider = DividerItemDecoration(activity, layoutManager.orientation)
+        binding.listRepos.addItemDecoration(divider)
     }
 
 
