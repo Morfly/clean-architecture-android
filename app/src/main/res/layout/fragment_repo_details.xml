@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="mobi.asta.task2.presentation.repodetails.RepoDetailsViewModel" />
+            type="com.morfly.arch.presentation.repodetails.RepoDetailsViewModel" />
     </data>
 
     <FrameLayout

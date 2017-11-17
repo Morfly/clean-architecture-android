@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="mobi.asta.task2.presentation.repolist.RepoListViewModel" />
+            type="com.morfly.arch.presentation.repolist.RepoListViewModel" />
 
     </data>
 

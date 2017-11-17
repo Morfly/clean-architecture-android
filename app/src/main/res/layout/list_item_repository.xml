@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="mobi.asta.task2.presentation.repolist.RepoListItemViewModel" />
+            type="com.morfly.arch.presentation.repolist.RepoListItemViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
